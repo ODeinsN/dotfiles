@@ -21,10 +21,10 @@ git clone --bare git@github.com:ODeinsN/dotfiles.git
 
 ### 3. Create the 'config' alias and add it to .bashrc
 ```bash
-alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
+alias config='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
 ```
 ```bash
-echo "alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'" >> .bashrc
+echo "alias config='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'" >> .bashrc
 ```
 
 ### 4. Checkout the branch
