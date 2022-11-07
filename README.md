@@ -7,11 +7,11 @@
 ### 1. Clone this repository inside it as a bare directory
 With HTTP:
 ```bash
-git clone --bare https://github.com/ODeinsN/dotfiles.git
+git clone --bare https://github.com/ODeinsN/dotfiles.git $HOME/dotfiles
 ```
 With SSH
 ```
-git clone --bare git@github.com:ODeinsN/dotfiles.git
+git clone --bare git@github.com:ODeinsN/dotfiles.git $HOME/dotfiles
 ```
 
 ### 2. Create the 'config' alias and add it to .bashrc
