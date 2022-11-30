@@ -152,8 +152,8 @@ alias cronlog="grep CRON /var/log/syslog"
 source <(ng completion script)
 
 # dotfiles manager shortcut
-alias config='/usr/bin/git --git-dir=/home/e/dotfiles/ --work-tree=/home/e'
+alias config='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
 
 # Docker
-alias d-c=docker-compose
-alias d-l=docker logs -f
+alias d-c="docker-compose"
+alias d-l="docker logs -f"
