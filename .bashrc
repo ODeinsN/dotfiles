@@ -147,10 +147,6 @@ pathExtend () {
 # crontab
 alias cronlog="grep CRON /var/log/syslog"
 
-
-# Load Angular CLI autocompletion.
-source <(ng completion script)
-
 # dotfiles manager shortcut
 alias config='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
 
