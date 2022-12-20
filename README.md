@@ -29,5 +29,5 @@ config checkout
 
 ### 4. Hide untracked Files
 ```bash
-config config --local status.showUntrackedFiles no
+config config --local status.showUntrackedFiles no
 ```
