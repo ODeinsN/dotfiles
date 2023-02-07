@@ -115,6 +115,8 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
+# bash
+alias sys-upgrade="sudo apt update -y && sudo apt upgrade -y"
 
 # Kubernetes
 alias kube="minikube kubectl --"
