@@ -119,16 +119,23 @@ fi
 alias sys-upgrade="sudo apt update -y && sudo apt upgrade -y"
 
 # Kubernetes
+alias mk="minikube"
+alias mkt="minikube tunnel --bind-address=localhost"
+alias mki="eval $(minikube -p minikube docker-env)"
+
 alias kube="minikube kubectl --"
 alias kubectl="kube"
-alias mkube="minikube"
 alias kga="kube get all"
 alias kgs="kube get service"
 alias kgp="kube get pods"
 alias kdp="kube describe pod $1"
+
 kre () { kube delete -f $1 && kube create -f $1; }
 kbash () { kube exec -it "$1" -- bash; }
 klog () { kube logs -f $1; }
+
+complete -o default -F __start_kubectl kube
+complete -o default -F __start_kubectl mk
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
@@ -155,3 +162,10 @@ alias config='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
 # Docker
 alias d-c="docker-compose"
 alias d-l="docker logs -f"
+
+
+# Load Angular CLI autocompletion.
+source <(ng completion script)
+
+# file browser
+alias odir="xdg-open"
