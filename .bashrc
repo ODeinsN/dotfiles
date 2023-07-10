@@ -121,7 +121,7 @@ alias sys-upgrade="sudo apt update -y && sudo apt upgrade -y"
 # Kubernetes
 alias mk="minikube"
 alias mkt="minikube tunnel --bind-address=localhost"
-alias mki="eval $(minikube -p minikube docker-env)"
+alias mki="mk image ls --format table"
 
 alias kube="minikube kubectl --"
 alias kubectl="kube"
@@ -129,8 +129,9 @@ alias kga="kube get all"
 alias kgs="kube get service"
 alias kgp="kube get pods"
 alias kdp="kube describe pod $1"
+alias kr="kube delete -f $1"
 
-kre () { kube delete -f $1 && kube create -f $1; }
+kre () { kube delete -f $1;  kube create -f $1; }
 kbash () { kube exec -it "$1" -- bash; }
 klog () { kube logs -f $1; }
 
@@ -161,6 +162,7 @@ alias config='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
 
 # Docker
 alias d-c="docker-compose"
+alias d-c-p="docker-compose -f docker-compose.prod.yml"
 alias d-l="docker logs -f"
 
 
@@ -169,3 +171,7 @@ source <(ng completion script)
 
 # file browser
 alias odir="xdg-open"
+
+# monitor profiles
+alias monitor-work="~/scripts/add-ultra-wide.sh 2560 1080 60 HDMI-1"
+alias monitor-uni="~/scripts/add-ultra-wide.sh 2560 1080 60 HDMI-A-0"
