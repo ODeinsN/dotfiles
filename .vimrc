@@ -1,7 +1,13 @@
+call plug#begin()
+
+
+Plug 'preservim/nerdtree'
+Plug 'junegunn/fzf.vim'
+
+call plug#end()
+
+
 set number relativenumber
-set idearefactormode=keep
-set ideajoin
-set surround
 set easymotion
 
 let mapleader = " "
@@ -14,10 +20,12 @@ noremap i l
 noremap I L
 noremap k n
 noremap K N
-noremap l i
+noremap l u
 noremap L I
 noremap j e
 noremap J E
+noremap u i
+noremap U I
 
 map <leader>a :action $SelectAll<CR>
 map <leader>b :action GotoDeclaration<CR>
