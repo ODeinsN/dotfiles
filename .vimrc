@@ -1,18 +1,27 @@
 call plug#begin()
 
-
 Plug 'preservim/nerdtree'
 Plug 'junegunn/fzf.vim'
+Plug 'mattn/emmet-vim'
+Plug 'airblade/vim-gitgutter'
+Plug 'tpope/vim-commentary'
+Plug 'vim-airline/vim-airline'
+Plug 'tpope/vim-fugitive'
+Plug 'dmerejkowsky/vim-ale'
+Plug 'tpope/vim-surround'
+Plug 'ervandew/supertab'
+Plug 'MarcWeber/vim-addon-mw-utils'
+Plug 'garbas/vim-snipmate'
+Plug 'easymotion/vim-easymotion'
 
 call plug#end()
 
 
 set number relativenumber
-set easymotion
 
 let mapleader = " "
 
-noremap n j 
+noremap n j
 noremap N J
 noremap e k
 noremap E K
@@ -52,7 +61,10 @@ map <leader>y :action EditorDeleteLine<CR>
 map <leader>[ :action EditorCodeBlockStart<CR>
 map <leader>] :action EditorCodeBlockEnd<CR>
 
-set NERDTree
+" open nerdtree on startup
+autocmd VimEnter * NERDTree | wincmd p
+
 let g:NERDTreeMapActivateNode='l'
 let g:NERDTreeMapJumpParent='h'
 
+noremap ZZ ZZZZ
