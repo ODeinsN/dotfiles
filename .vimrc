@@ -1,6 +1,9 @@
+source $HOME/vim-config/mw-addons.vim
+
 call plug#begin()
 
 Plug 'preservim/nerdtree'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() }}
 Plug 'junegunn/fzf.vim'
 Plug 'mattn/emmet-vim'
 Plug 'airblade/vim-gitgutter'
@@ -10,12 +13,13 @@ Plug 'tpope/vim-fugitive'
 Plug 'dmerejkowsky/vim-ale'
 Plug 'tpope/vim-surround'
 Plug 'ervandew/supertab'
-Plug 'MarcWeber/vim-addon-mw-utils'
+Plug 'marcweber/vim-addon-mw-utils'
 Plug 'garbas/vim-snipmate'
+Plug 'honza/vim-snippets'
 Plug 'easymotion/vim-easymotion'
+Plug 'goldie-lin/vim-dts'
 
 call plug#end()
-
 
 set number relativenumber
 
@@ -51,7 +55,7 @@ map <leader>o :action OverrideMethods<CR>
 map <leader>p :action ParameterInfo<CR>
 map <leader>q :action QuickJavaDoc<CR>
 map <leader>r :action Replace<CR>
-map <leader>s :action SaveAll<CR>
+" map <leader>s :action SaveAll<CR>
 map <leader>t :action Vcs.UpdateProject<CR>
 map <leader>u :action GotoSuperMethod<CR>
 map <leader>v :action $Paste<CR>
@@ -64,7 +68,16 @@ map <leader>] :action EditorCodeBlockEnd<CR>
 " open nerdtree on startup
 autocmd VimEnter * NERDTree | wincmd p
 
-let g:NERDTreeMapActivateNode='l'
-let g:NERDTreeMapJumpParent='h'
+nnoremap <leader>n :NERDTreeFocus<CR>
+nnoremap <C-n> :NERDTree<CR>
+nnoremap <C-t> :NERDTreeToggle<CR>
+nnoremap <C-f> :NERDTreeFind<CR>
+
+"let g:NERDTreeMapJumpNextSibling="<C-N>"
+"let g:NERDTreeMapJumpPrevSibling="<C-E>"
+
 
 noremap ZZ ZZZZ
+
+autocmd BufRead,BufNewFile *.dts,*.dtsi set filetype=dtsA
+
