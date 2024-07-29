@@ -167,7 +167,7 @@ alias d-l="docker logs -f"
 
 
 # Load Angular CLI autocompletion.
-source <(ng completion script)
+# source <(ng completion script)
 
 # file browser
 alias odir="xdg-open"
