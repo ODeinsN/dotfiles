@@ -175,3 +175,8 @@ alias odir="xdg-open"
 # monitor profiles
 alias monitor-work="~/scripts/add-ultra-wide.sh 2560 1080 60 HDMI-1"
 alias monitor-uni="~/scripts/add-ultra-wide.sh 2560 1080 60 HDMI-A-0"
+
+alias pcuptime="date -d \"$(</proc/uptime awk '{print $1}') seconds ago\""
+
+alias svim="sudo vim"
+alias g="grep -i"
