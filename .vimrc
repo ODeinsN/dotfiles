@@ -18,6 +18,7 @@ Plug 'garbas/vim-snipmate'
 Plug 'honza/vim-snippets'
 Plug 'easymotion/vim-easymotion'
 Plug 'goldie-lin/vim-dts'
+Plug 'jyelloz/vim-dts-indent'
 
 call plug#end()
 
