@@ -15,10 +15,10 @@ Plug 'tpope/vim-surround'
 Plug 'ervandew/supertab'
 Plug 'marcweber/vim-addon-mw-utils'
 Plug 'garbas/vim-snipmate'
-" Plug 'honza/vim-snippets'
 Plug 'easymotion/vim-easymotion'
 Plug 'goldie-lin/vim-dts'
 Plug 'jyelloz/vim-dts-indent'
+Plug 'neoclide/coc.nvim'
 
 call plug#end()
 
@@ -84,4 +84,13 @@ autocmd BufRead,BufNewFile *.dts,*.dtsi set filetype=dtsA
 
 filetype plugin on
 set omnifunc=syntaxcomplete#Complete
+
+inoremap <silent><expr> <TAB>
+      \ coc#pum#visible() ? coc#pum#next(1) :
+      \ CheckBackspace() ? "\<Tab>" :
+      \ coc#refresh()
+inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
+inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm(): "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+inoremap <silent><expr> <c-@> coc#refresh()
+
 
