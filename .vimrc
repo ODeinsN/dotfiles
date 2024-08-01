@@ -1,5 +1,18 @@
 source $HOME/vim-config/mw-addons.vim
 
+let g:ale_set_balloons=1
+let g:ale_completion_enabled=1
+
+
+" cusor config
+let &t_SI = "\<Esc>[6 q"
+let &t_SR = "\<Esc>[4 q"
+let &t_EI = "\<Esc>[2 q"
+
+set ttimeout
+set ttimeoutlen=1
+set ttyfast
+
 call plug#begin()
 
 Plug 'preservim/nerdtree'
@@ -18,7 +31,8 @@ Plug 'garbas/vim-snipmate'
 Plug 'easymotion/vim-easymotion'
 Plug 'goldie-lin/vim-dts'
 Plug 'jyelloz/vim-dts-indent'
-Plug 'neoclide/coc.nvim'
+Plug 'jiangmiao/auto-pairs.vim'
+
 
 call plug#end()
 
@@ -66,7 +80,7 @@ map <leader>y :action EditorDeleteLine<CR>
 map <leader>[ :action EditorCodeBlockStart<CR>
 map <leader>] :action EditorCodeBlockEnd<CR>
 
-" open nerdtree on startup
+" NERDTREE config
 autocmd VimEnter * NERDTree | wincmd p
 
 nnoremap <leader>n :NERDTreeFocus<CR>
@@ -82,15 +96,12 @@ noremap ZZ ZZZZ
 
 autocmd BufRead,BufNewFile *.dts,*.dtsi set filetype=dtsA
 
+" ALE config
 filetype plugin on
-set omnifunc=syntaxcomplete#Complete
 
-inoremap <silent><expr> <TAB>
-      \ coc#pum#visible() ? coc#pum#next(1) :
-      \ CheckBackspace() ? "\<Tab>" :
-      \ coc#refresh()
-inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
-inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm(): "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
-inoremap <silent><expr> <c-@> coc#refresh()
+nmap gd :ALEGoToDefinitionInTab<CR>
+nmap gr :ALEFindReferences<CR>
+nmap K :ALEHover<CR>
 
+set omnifunc=ale#completion#OmniFunc
 
