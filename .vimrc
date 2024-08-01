@@ -15,7 +15,7 @@ Plug 'tpope/vim-surround'
 Plug 'ervandew/supertab'
 Plug 'marcweber/vim-addon-mw-utils'
 Plug 'garbas/vim-snipmate'
-Plug 'honza/vim-snippets'
+" Plug 'honza/vim-snippets'
 Plug 'easymotion/vim-easymotion'
 Plug 'goldie-lin/vim-dts'
 Plug 'jyelloz/vim-dts-indent'
@@ -81,4 +81,7 @@ nnoremap <C-f> :NERDTreeFind<CR>
 noremap ZZ ZZZZ
 
 autocmd BufRead,BufNewFile *.dts,*.dtsi set filetype=dtsA
+
+filetype plugin on
+set omnifunc=syntaxcomplete#Complete
 
