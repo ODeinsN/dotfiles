@@ -22,11 +22,10 @@ Plug 'marcweber/vim-addon-mw-utils'
 Plug 'garbas/vim-snipmate'
 Plug 'goldie-lin/vim-dts'
 Plug 'jyelloz/vim-dts-indent'
-Plug 'jiangmiao/auto-pairs.vim'
+Plug 'jiangmiao/auto-pairs'
 source $config/ale/ale.plugins.vim
 
 call plug#end()
 
 
 autocmd BufRead,BufNewFile *.dts,*.dtsi set filetype=dtsA
-
