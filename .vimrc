@@ -1,17 +1,10 @@
-source $HOME/vim-config/mw-addons.vim
+let $config = "$HOME/vim-config"
 
-let g:ale_set_balloons=1
-let g:ale_completion_enabled=1
-
-
-" cusor config
-let &t_SI = "\<Esc>[6 q"
-let &t_SR = "\<Esc>[4 q"
-let &t_EI = "\<Esc>[2 q"
-
-set ttimeout
-set ttimeoutlen=1
-set ttyfast
+source $config/main.vim
+source $config/layout/colemak.vim
+source $config/mw-addons/mw-addons.vim
+source $config/ale/ale.vim
+source $config/nerdtree/nerdtree.vim
 
 call plug#begin()
 
@@ -23,85 +16,17 @@ Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-commentary'
 Plug 'vim-airline/vim-airline'
 Plug 'tpope/vim-fugitive'
-Plug 'dmerejkowsky/vim-ale'
 Plug 'tpope/vim-surround'
 Plug 'ervandew/supertab'
 Plug 'marcweber/vim-addon-mw-utils'
 Plug 'garbas/vim-snipmate'
-Plug 'easymotion/vim-easymotion'
 Plug 'goldie-lin/vim-dts'
 Plug 'jyelloz/vim-dts-indent'
 Plug 'jiangmiao/auto-pairs.vim'
-
+source $config/ale/ale.plugins.vim
 
 call plug#end()
 
-set number relativenumber
-
-let mapleader = " "
-
-noremap n j
-noremap N J
-noremap e k
-noremap E K
-noremap i l
-noremap I L
-noremap k n
-noremap K N
-noremap l u
-noremap L I
-noremap j e
-noremap J E
-noremap u i
-noremap U I
-
-map <leader>a :action $SelectAll<CR>
-map <leader>b :action GotoDeclaration<CR>
-map <leader>c :action $Copy<CR>
-map <leader>d :action EditorDuplicate<CR>
-map <leader>e :action RecentFiles<CR>
-map <leader>f :action Find<CR>
-map <leader>g :action GotoLine<CR>
-map <leader>h :action TypeHierarchy<CR>
-map <leader>i :action ImplementMethods<CR>
-map <leader>m :action EditorScrollToCenter<CR>
-map <leader>n :action FileChooser.NewFolder<CR>
-map <leader>o :action OverrideMethods<CR>
-map <leader>p :action ParameterInfo<CR>
-map <leader>q :action QuickJavaDoc<CR>
-map <leader>r :action Replace<CR>
-" map <leader>s :action SaveAll<CR>
-map <leader>t :action Vcs.UpdateProject<CR>
-map <leader>u :action GotoSuperMethod<CR>
-map <leader>v :action $Paste<CR>
-map <leader>w :action EditorSelectWord<CR>
-map <leader>x :action $Cut<CR>
-map <leader>y :action EditorDeleteLine<CR>
-map <leader>[ :action EditorCodeBlockStart<CR>
-map <leader>] :action EditorCodeBlockEnd<CR>
-
-" NERDTREE config
-autocmd VimEnter * NERDTree | wincmd p
-
-nnoremap <leader>n :NERDTreeFocus<CR>
-nnoremap <C-n> :NERDTree<CR>
-nnoremap <C-t> :NERDTreeToggle<CR>
-nnoremap <C-f> :NERDTreeFind<CR>
-
-"let g:NERDTreeMapJumpNextSibling="<C-N>"
-"let g:NERDTreeMapJumpPrevSibling="<C-E>"
-
-
-noremap ZZ ZZZZ
 
 autocmd BufRead,BufNewFile *.dts,*.dtsi set filetype=dtsA
-
-" ALE config
-filetype plugin on
-
-nmap gd :ALEGoToDefinitionInTab<CR>
-nmap gr :ALEFindReferences<CR>
-nmap K :ALEHover<CR>
-
-set omnifunc=ale#completion#OmniFunc
 

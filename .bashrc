@@ -150,6 +150,8 @@ alias "v=xclip -o"
 # Gitflow
 alias gf="git-flow"
 
+export PATH=$PATH:/home/ale11410/.cargo/bin
+
 pathExtend () {
   export PATH=$PATH:$PWD
 }
@@ -180,3 +182,4 @@ alias pcuptime="date -d \"$(</proc/uptime awk '{print $1}') seconds ago\""
 
 alias svim="sudo vim"
 alias g="grep -i"
+. "$HOME/.cargo/env"
