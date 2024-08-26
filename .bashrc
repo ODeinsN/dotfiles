@@ -88,7 +88,7 @@ fi
 #export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
 # some more ls aliases
-alias ll='ls -alF'
+alias ll='ls -alFh'
 alias la='ls -A'
 alias l='ls -CF'
 
@@ -183,3 +183,6 @@ alias pcuptime="date -d \"$(</proc/uptime awk '{print $1}') seconds ago\""
 alias svim="sudo vim"
 alias g="grep -i"
 . "$HOME/.cargo/env"
+
+alias makej="make -j$(nproc)"
+alias remod="modprobe -r $@ && modprobe $@"
