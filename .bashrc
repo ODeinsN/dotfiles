@@ -186,3 +186,4 @@ alias g="grep -i"
 
 alias makej="make -j$(nproc)"
 alias remod="modprobe -r $@ && modprobe $@"
+alias udevreload="sudo udevadm control --reload-rules && sudo udevadm trigger && sudo systemctl daemon-reload"
