@@ -150,9 +150,19 @@ alias "v=xclip -o"
 # Gitflow
 alias gf="git-flow"
 
-export PATH=$PATH:/home/ale11410/.cargo/bin
-
 pathExtend () {
+	pathExtension=$1
+	if [ -d "$pathExtension" ]; then
+		export PATH=$PATH:$pathExtension	
+	fi
+}
+	export PATH=$PATH:/home/ale11410/.cargo/bin
+
+pathExtend /home/ale11410/.cargo/bin
+pathExtend /home/ale11410/OPTEE-RPI3/build/../toolchains/rust/.cargo/bin 
+
+
+pathExtendPwd () {
   export PATH=$PATH:$PWD
 }
 
@@ -187,3 +197,26 @@ alias g="grep -i"
 alias makej="make -j$(nproc)"
 alias remod="modprobe -r $@ && modprobe $@"
 alias udevreload="sudo udevadm control --reload-rules && sudo udevadm trigger && sudo systemctl daemon-reload"
+
+dtb-decompile(){
+	target=$1
+	outputPath=$2
+	cd $outputPath || exit 1
+	cd -
+	outputFile=$(echo $target | sed -r 's|(.?+\/)?(.?+)[.]dtb.*|\2.dts|g')
+	output="$outputPath/$outputFile"
+	dtc -I dtb -O dts $target -o $output
+}
+
+
+
+dts-compile(){
+	target=$1
+	outputPath=$2
+	cd $outputPath || exit 1
+	cd -
+	outputFile=$(echo $target | sed -r 's|(.?+\/)?(.?+)[.](dts.*)|\2.dtb|g')
+	output="$outputPath/$outputFile"
+
+	dtc -I dts -O dtb $target -o $output
+}

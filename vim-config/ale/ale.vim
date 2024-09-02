@@ -7,8 +7,8 @@ let g:ale_rust_rls_toolchain = 'stable'
 " ALE config
 filetype plugin on
 
-nmap gd :ALEGoToDefinition<CR>
-nmap gr :ALEFindReferences<CR>
+" nmap gd :ALEGoToDefinition<CR>
+" nmap gr :ALEFindReferences<CR>
 " nmap K :ALEHover<CR>
 
 set omnifunc=ale#completion#OmniFunc

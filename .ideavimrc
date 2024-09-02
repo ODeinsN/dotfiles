@@ -1,12 +1,4 @@
-set number relativenumber
-set idearefactormode=keep
-set ideajoin
-set surround
-set easymotion
-
-let mapleader = " "
-
-noremap n j 
+noremap n j
 noremap N J
 noremap e k
 noremap E K
@@ -14,12 +6,22 @@ noremap i l
 noremap I L
 noremap k n
 noremap K N
-noremap l i
+noremap l u
 noremap L I
 noremap j e
 noremap J E
+noremap u i
+noremap U I
 
-map <leader>a :action $SelectAll<CR>
+set number relativenumber
+set idearefactormode=keep
+set ideajoin
+set surround
+set easymotion
+set visualbell
+set noerrorbells
+
+let mapleader = " "
 map <leader>b :action GotoDeclaration<CR>
 map <leader>c :action $Copy<CR>
 map <leader>d :action EditorDuplicate<CR>
