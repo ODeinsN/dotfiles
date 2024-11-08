@@ -29,3 +29,4 @@ call plug#end()
 
 
 autocmd BufRead,BufNewFile *.dts,*.dtsi set filetype=dtsA
+packadd termdebug

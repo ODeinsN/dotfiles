@@ -12,4 +12,8 @@ noremap j e
 noremap J E
 noremap u i
 noremap U I
+noremap m h
+noremap M H
+noremap h m
+noremap H M
 
