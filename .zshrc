@@ -216,3 +216,5 @@ dts-compile(){
 }
 
 alias sdone="say done"
+export PATH="$HOME/.basher/bin:$PATH"   ##basher5ea843
+eval "$(basher init - zsh)"             ##basher5ea843

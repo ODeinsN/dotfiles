@@ -10,4 +10,4 @@ set ttimeoutlen=1
 set ttyfast
 syntax on
 
-
+set pastetoggle=<F2>
