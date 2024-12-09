@@ -6,6 +6,9 @@ source $config/mw-addons/mw-addons.vim
 source $config/ale/ale.vim
 source $config/nerdtree/nerdtree.vim
 source $config/markdown-preview/setup.vim
+source $config/vimtex/vimtex.vim
+source $config/wsl/wsl.vim
+
 
 call plug#begin()
 
@@ -26,6 +29,7 @@ Plug 'jyelloz/vim-dts-indent'
 Plug 'jiangmiao/auto-pairs'
 source $config/ale/ale.plugins.vim
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install()  }, 'for': ['markdown', 'vim-plug'] }
+Plug 'lervag/vimtex'
 
 call plug#end()
 
@@ -34,3 +38,5 @@ source $config/markdown-preview/mappings.vim
 
 autocmd BufRead,BufNewFile *.dts,*.dtsi set filetype=dtsA
 packadd termdebug
+
+set encoding=utf-8
