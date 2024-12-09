@@ -7,7 +7,7 @@ noremap I L
 noremap k n
 noremap K N
 noremap l u
-noremap L I
+noremap L U
 noremap j e
 noremap J E
 noremap u i
