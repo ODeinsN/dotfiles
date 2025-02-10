@@ -186,7 +186,7 @@ alias pcuptime="date -d \"$(</proc/uptime awk '{print $1}') seconds ago\""
 
 alias svim="sudo vim"
 alias g="grep -i"
-. "$HOME/.cargo/env"
+# . "$HOME/.cargo/env"
 
 alias makej="make -j$(nproc)"
 alias remod="modprobe -r $@ && modprobe $@"
@@ -217,6 +217,9 @@ dts-compile(){
 
 alias sdone="say done"
 export PATH="$HOME/.basher/bin:$PATH"   ##basher5ea843
-eval "$(basher init - zsh)"             ##basher5ea843
+# eval "$(basher init - zsh)"             ##basher5ea843
 
 alias vim="nvim"
+
+alias dcu="docker compose up -d"
+alias dcd="docker compose down"
